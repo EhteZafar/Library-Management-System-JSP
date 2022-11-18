@@ -16,7 +16,7 @@
 %>
 
 
-<img src="Footer-Logo.png" align="right"  width="250" height="150" style="padding-bottom: 10px;"></center>
+<img src="Footer-Logo.png" align="right"  width="250" height="150" style="padding-bottom: 10px;">
 
   
 <style>

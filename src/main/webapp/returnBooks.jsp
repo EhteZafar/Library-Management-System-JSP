@@ -51,7 +51,7 @@
 		String condition = request.getParameter("condition");
 		int bookID = Integer.parseInt(bookID_);
 		int studentID = Integer.parseInt(studentID_);
-		 session.setAttribute("resultReturn", "unsuccess");
+		int count =0;
 		try {
       		Connection con = ConnectionProvider.getCon();
       		PreparedStatement statement = con.prepareStatement("select * from issue where student_id = ? and book_id = ?");    
@@ -61,13 +61,6 @@
       		//out.println(rs1.next());
       		
       		while(rs.next()) { 
-      			 //session.setAttribute("book_id", rs1.getString(1));
-      			//session.setAttribute("student_id", rs2.getString(1));
-      			//session.setAttribute("student_name", rs2.getString(2));
-      		//if(!rs.getString(1).equalsIgnoreCase(bookID_) || !rs.getString(2).equalsIgnoreCase(studentID_)) {
-      			//out.println("ID or Book ID incorrect.");
-      			//break;
-      			//} else {
       				try {
 
       					PreparedStatement st = con.prepareStatement("DELETE FROM issue WHERE student_id = ? and book_id = ?");
@@ -111,9 +104,12 @@
       				}
       				
       
-       }//}
-      
-      		}
+       }
+      		if(count==0) {
+  				%>
+  				<h3 style="text-align: center; font-style: italic;">This book is not issued to this student</h3>
+  			<% } 
+		}
       catch(Exception e) {
     	  out.println(e);
       }

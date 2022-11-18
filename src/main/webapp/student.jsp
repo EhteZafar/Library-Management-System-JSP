@@ -10,6 +10,7 @@
   <div class="w3-bar w3-black">
     <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Your Profile</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo1')">All Books</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Brief Books</button>
     <a href="adminLogin.html" class="w3-bar-item w3-button tablink">Logout</a>
   </div>
   
@@ -155,6 +156,71 @@
 </div>
 
 
+  <div id="Tokyo" class="w3-container w3-border city" style="display:none">
+  
+     <br>
+	
+	<table>
+    <thead>
+      <tr>
+        <td colspan="1"> 
+        <form action="breifBooks.jsp" method="post">
+        	<img src="Wimpy Kid.jpg" align="middle"  width="150" height="250" style="padding-bottom: 10px;">
+        	<input type="hidden" name="bookID" value="3" >
+        	<br>
+        	<input type="submit" value="view details">
+        </form>
+        </td>
+        
+        <td colspan="1"> 
+        <form action="breifBooks.jsp" method="post">
+        	<img src="Harry Potter.jpg" align="middle"  width="150" height="250" style="padding-bottom: 10px;">
+        	<input type="hidden" name="bookID" value="5" >
+        	<br>
+        	<input type="submit" value="view details">
+        </form>
+        </td>
+        
+        <td colspan="1"> 
+        <form action="breifBooks.jsp" method="post">
+        	<img src="Twilight.jpg" align="middle"  width="150" height="250" style="padding-bottom: 10px;">
+        	<input type="hidden" name="bookID" value="2" >
+        	<br>
+        	<input type="submit" value="view details">
+        </form>
+        </td>
+      </tr>
+      <tr>
+ 
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       	
+      </tr>
+      <tr>
+        
+
+      </tr>
+      <tr>
+        
+
+      </tr>
+      <tr>
+       
+      </tr>
+      <tr>
+      
+      </tr>
+     
+
+    </tbody>
+  </table>
+	
+  </div>
+</section>
+</div>
 
 
 

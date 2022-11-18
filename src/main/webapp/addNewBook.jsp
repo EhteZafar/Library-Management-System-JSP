@@ -8,12 +8,13 @@
 	String publisher = request.getParameter("publisher");
 	String category = request.getParameter("category");
 	String price = request.getParameter("price");
+	String brief = request.getParameter("summary");
 	
 	int id = Integer.parseInt(id_);
 	try {
 		Connection con = ConnectionProvider.getCon();
 		Statement st = con.createStatement();
-		st.executeUpdate("insert into books values('"+id+"','"+name+"','"+author+"','"+publisher+"','"+category+"','"+price+"')");
+		st.executeUpdate("insert into books values('"+id+"','"+name+"','"+author+"','"+publisher+"','"+category+"','"+price+"','"+brief+"')");
 		response.sendRedirect("adminHome.jsp");
 	} catch (Exception e) {
 		out.println(e);

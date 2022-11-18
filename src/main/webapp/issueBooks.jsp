@@ -44,31 +44,26 @@
     <%@ page import= "java.time.LocalDate" %>
 	<%@ page import= "java.time.temporal.ChronoUnit" %>
     <%
-    //out.println("Hello");
+
 		String bookID_ = request.getParameter("bookID"); 
 		String studentID_ = request.getParameter("studentID");
 		int bookID = Integer.parseInt(bookID_);
 		int studentID = Integer.parseInt(studentID_);
+		int count =0;
 		
 		try {
       		Connection con = ConnectionProvider.getCon();
       		PreparedStatement statement1 = con.prepareStatement("select * from books where id = ?");    
       		statement1.setInt(1, bookID);    
       		ResultSet rs1 = statement1.executeQuery();
-      		//out.println(rs1.next());
       		
       		while(rs1.next()) {
-      		PreparedStatement statement2 = con.prepareStatement("select * from students where student_ID = ?");    
-      		statement2.setInt(1, studentID);    
-      		ResultSet  rs2 = statement2.executeQuery();
-      		while(rs2.next())
-  			{
-      			 //session.setAttribute("book_id", rs1.getString(1));
-      			//session.setAttribute("student_id", rs2.getString(1));
-      			//session.setAttribute("student_name", rs2.getString(2));
-      		if(!rs1.getString(1).equalsIgnoreCase(bookID_) || !rs2.getString(1).equalsIgnoreCase(studentID_)) {
-      			  out.println("ID or Book ID incorrect");
-      			break;} else {
+      			PreparedStatement statement2 = con.prepareStatement("select * from students where student_ID = ?");    
+      			statement2.setInt(1, studentID);    
+      			ResultSet  rs2 = statement2.executeQuery();
+      			while(rs2.next())
+  				{
+      				count=1;
       			%>
 
 <section>
@@ -92,8 +87,7 @@
       	<% 
       		LocalDate currentDate = LocalDate.now();
 		  	LocalDate result = currentDate.plus(1, ChronoUnit.WEEKS);
-        	//Date date = new Date();
-		  	//String date1 =  formatter.format(date);
+
 		  	
       	%>
         <tr>
@@ -113,7 +107,10 @@
 	}
       
        }}
-      }
+      		if(count==0) {
+  				%>
+  				<h3 style="text-align: center; font-style: italic;">Book ID or Student ID incorrect</h3>
+  			<% } 
       		}
       catch(Exception e) {
     	  out.println(e);

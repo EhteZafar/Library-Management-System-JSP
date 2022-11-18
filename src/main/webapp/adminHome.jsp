@@ -97,6 +97,13 @@
                                         <input type="text"  class="form-control" name="price">
                                     </div>
                                 </div>
+                                
+                                <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Summary</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="summary">
+                                    </div>
+                                </div>
 
                                     <div class="col-md-6 offset-md-4">
                                         <button name="save" type="submit" class="btn btn-primary">
@@ -339,6 +346,8 @@
             </div>
         </div>
    </main>
+   <br>
+
 <section>
   <!--for demo wrap-->
   <div class="tbl-header">
