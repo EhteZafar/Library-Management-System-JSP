@@ -5,11 +5,11 @@
 	<title>FAST LIBRARY</title>
 </head>
 <body>
-<center><img src="Footer-Logo.png" align="right" width="250" height="80"></center>
+<center><img src="images/Footer-Logo.png" align="right" width="250" height="80"></center>
 <div class="w3-container">
   <div class="w3-bar w3-black">
     <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Search Result</button>
-    <a href="adminLogin.html" class="w3-bar-item w3-button tablink">Logout</a>
+    <a href="index.html" class="w3-bar-item w3-button tablink">Home</a>
   </div>
   
   <div id="London" class="w3-container w3-border city">
@@ -55,7 +55,7 @@
       	<table>
       		<tbody>
       			<tr>
-      				<td colspan="1"><img src="<%=rs.getString(1)%>.jpg" align="middle"  width="250" height="350" style="padding-bottom: 10px;"></td>
+      				<td colspan="1"><img src="images/<%=rs.getString(1)%>.jpg" align="middle"  width="250" height="350" style="padding-bottom: 10px;"></td>
       				<td colspan="3"> <h3>Summary</h3><h5> <%= rs.getString(2) %></h5></td>
       			</tr>
       		</tbody>

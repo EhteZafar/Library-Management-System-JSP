@@ -16,7 +16,7 @@
 %>
 
 
-<img src="Footer-Logo.png" align="right"  width="250" height="150" style="padding-bottom: 10px;">
+<img src="images/Footer-Logo.png" align="right"  width="250" height="150" style="padding-bottom: 10px;">
 
   
 <style>
@@ -130,7 +130,7 @@ tbody >tr:nth-child(odd) {
       </tr>
       <%} %>	
       <tr>
-        <td colspan="3"><a titlt="print screen" alt="print screen" onclick="window.print();" target="_blank" style="cursor:pointer;"><center><img src="print.png"></center></a></td>
+        <td colspan="3"><a titlt="print screen" alt="print screen" onclick="window.print();" target="_blank" style="cursor:pointer;"><center><img src="images/print.png"></center></a></td>
       </tr>
 
     </tbody>

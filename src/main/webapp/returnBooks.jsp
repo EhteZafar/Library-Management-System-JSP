@@ -1,9 +1,10 @@
+<%@page import="javax.swing.plaf.metal.MetalBorders.Flush3DBorder"%>
 <%@include file="header.html"%>
 <!DOCTYPE html>
 <html>
 <title>FAST LIBRARY</title>
 <body>
-<center><img src="Footer-Logo.png" align="right" width="250" height="80"></center>
+<center><img src="images/Footer-Logo.png" align="right" width="250" height="80"></center>
 <div class="w3-container">
   <div class="w3-bar w3-black">
     <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Return Books</button>
@@ -61,6 +62,7 @@
       		//out.println(rs1.next());
       		
       		while(rs.next()) { 
+      			count = 1;
       				try {
 
       					PreparedStatement st = con.prepareStatement("DELETE FROM issue WHERE student_id = ? and book_id = ?");
@@ -76,7 +78,9 @@
 	      		      		
 	      		      		while(price.next()) {
 	      		      			if(condition.equalsIgnoreCase("damaged")) {
-	      		      				out.println("Pay " + price.getString(6) + "$ for damages."); 
+	      		      				%>
+	      		      				<h3 style="text-align: center; font-style: italic;">Pay <%= price.getString(6) %>$ for damages</h3>
+	      		      				<%
 	      		      			} 
 	      		      			
 	      		      			int day = rs.getDate(5).getDate();
@@ -84,9 +88,13 @@
 	      		      			int day1 = currentDate.getDayOfMonth();
 	      		      			int month1 = currentDate.getMonthValue();
 								
-								if(day < day1 && (month+1)== month1) {
-									out.println("Pay 2$ for late return.");
-								}
+	      		      			if((month+1)<= month1) {
+	      		      				int m = ((month+1) - month1)*30;
+	      		      				int d = day1-day; %>
+	      		      				
+	      		      				<h3 style="text-align: center; font-style: italic;">Pay <%= m+d %>$ for late return</h3>
+	      		      				<%
+	      		      			}
 	      		      			
 	      		      		}
 	      		      		
@@ -96,9 +104,9 @@
       			        
 
       			        
-      			        
-      			        out.println("Returned Successful.");
-      			        
+      			        %>
+      			        <h3 style="text-align: center; font-style: italic;">Returned Successful</h3>
+      			        <% 
       				} catch (Exception e) {
       					out.println(e);
       				}
