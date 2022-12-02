@@ -5,13 +5,13 @@
 	<title>FAST LIBRARY</title>
 </head>
 <body>
-<center><img src="Footer-Logo.png" align="right" width="250" height="80"></center>
+<center><img src="images/Footer-Logo.png" align="right" width="250" height="80"></center>
 <div class="w3-container">
   <div class="w3-bar w3-black">
     <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Your Profile</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo1')">All Books</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Brief Books</button>
-    <a href="adminLogin.html" class="w3-bar-item w3-button tablink">Logout</a>
+    <a href="index.html" class="w3-bar-item w3-button tablink">Home</a>
   </div>
   
   <div id="London" class="w3-container w3-border city">
@@ -41,7 +41,7 @@
 </head>
 <body>
 
-<main class="my-form">
+<main class="my-form" style="width: 40%; margin: auto;">
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -50,23 +50,24 @@
                         <div class="card-body">
                             <form name="my-form" onsubmit="return validform()" action="studentHome.jsp" method="post">
                                 <div class="form-group row">
-                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Student ID</label>
-                                    <div class="col-md-6">
-                                        <input type="text"class="form-control" name="studentID">
+                                    
+                                    <div class="col-md-9">
+                                        <input type="text"class="form-control" name="studentID" placeholder="Enter Student ID">
                                     </div>
-                                </div>
-                                
-                                    <div class="col-md-6 offset-md-4">
+                                                                    
+                                    <div class="col-md-2">
                                         <button type="submit" class="btn btn-primary">
                                        Search
                                         </button>
                                     </div>
+                                </div>
                                 </div>
                             </form>
                         </div>
                     </div>
             </div>
         </div>
+        </main>
         <br>
          <%
   			String msg= request.getParameter("msg");
@@ -79,27 +80,43 @@
     
     <div id="Tokyo1" class="w3-container w3-border city" style="display:none">
    <br>
-   <main class="my-form">
+   	
+   <main class="my-form" style="width: 40%; margin: auto;">
     <div class="cotainer">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                     <div class="card">
                         <div class="card-header">Search Book</div>
                         <div class="card-body">
                             <form name="my-form" onsubmit="return validform()" action="searchBooks.jsp" method="post">
                                 
                                  <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Book ID</label>
-                                    <div class="col-md-6">
-                                        <input type="text"  class="form-control" name="id">
+                                    
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="id" placeholder="Search by ID">
                                     </div>
-                                </div>
-                                
-                                    <div class="col-md-6 offset-md-4">
+                                     <div class="col-md-2">
                                         <button type="submit" class="btn btn-primary">
                                        Search
                                         </button>
                                     </div>
+                                </div>
+                                
+                                    </form>
+                                    
+                                     <form name="my-form" onsubmit="return validform()" action="searchBooksbyName.jsp" method="post">
+                                
+                                 <div class="form-group row">
+                                    
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="name" placeholder="Search by Name">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary">
+                                       Search
+                                        </button>
+                                    </div>
+                                </div>
                                     </form>
                                 </div>
                         </div>
@@ -107,6 +124,8 @@
             </div>
         </div>
    </main>
+   
+
 <section>
   <!--for demo wrap-->
   <div class="tbl-header">
@@ -165,7 +184,7 @@
       <tr>
         <td colspan="1"> 
         <form action="breifBooks.jsp" method="post">
-        	<img src="Wimpy Kid.jpg" align="middle"  width="150" height="250" style="padding-bottom: 10px;">
+        	<img src="images/Wimpy Kid.jpg" align="middle"  width="150" height="250" style="padding-bottom: 10px;">
         	<input type="hidden" name="bookID" value="3" >
         	<br>
         	<input type="submit" value="view details">
@@ -174,7 +193,7 @@
         
         <td colspan="1"> 
         <form action="breifBooks.jsp" method="post">
-        	<img src="Harry Potter.jpg" align="middle"  width="150" height="250" style="padding-bottom: 10px;">
+        	<img src="images/Harry Potter.jpg" align="middle"  width="150" height="250" style="padding-bottom: 10px;">
         	<input type="hidden" name="bookID" value="5" >
         	<br>
         	<input type="submit" value="view details">
@@ -183,7 +202,7 @@
         
         <td colspan="1"> 
         <form action="breifBooks.jsp" method="post">
-        	<img src="Twilight.jpg" align="middle"  width="150" height="250" style="padding-bottom: 10px;">
+        	<img src="images/Twilight.jpg" align="middle"  width="150" height="250" style="padding-bottom: 10px;">
         	<input type="hidden" name="bookID" value="2" >
         	<br>
         	<input type="submit" value="view details">

@@ -7,7 +7,7 @@
 
 <body>
 
-<center><img src="Footer-Logo.png" align="right" width="250" height="80"></center>	
+<center><img src="images/Footer-Logo.png" align="right" width="250" height="80"></center>	
 
 <div class="w3-container">
   <div class="w3-bar w3-black">
@@ -238,27 +238,42 @@
   <div id="Tokyo" class="w3-container w3-border city" style="display:none">
   
      <br>
-   <main class="my-form">
+   <main class="my-form" style="width: 40%; margin: auto;">
     <div class="cotainer">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                     <div class="card">
-                        <div class="card-header">Search Student</div>
+                        <div class="card-header">Search Students</div>
                         <div class="card-body">
                             <form name="my-form" onsubmit="return validform()" action="searchStudents.jsp" method="post">
                                 
                                  <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Student ID</label>
-                                    <div class="col-md-6">
-                                        <input type="text"  class="form-control" name="id">
+                                    
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="id" placeholder="Search by ID">
                                     </div>
-                                </div>
-                                
-                                    <div class="col-md-6 offset-md-4">
+                                     <div class="col-md-2">
                                         <button type="submit" class="btn btn-primary">
                                        Search
                                         </button>
                                     </div>
+                                </div>
+                                
+                                    </form>
+                                    
+                                     <form name="my-form" onsubmit="return validform()" action="searchStudentsbyName.jsp" method="post">
+                                
+                                 <div class="form-group row">
+                                    
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="name" placeholder="Search by Name">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary">
+                                       Search
+                                        </button>
+                                    </div>
+                                </div>
                                     </form>
                                 </div>
                         </div>
@@ -266,7 +281,7 @@
             </div>
         </div>
    </main>
-  
+     
 <section>
   <!--for demo wrap-->
   <div class="tbl-header">
@@ -318,27 +333,42 @@
 </div>
 <div id="Tokyo1" class="w3-container w3-border city" style="display:none">
    <br>
-   <main class="my-form">
+   <main class="my-form" style="width: 40%; margin: auto;">
     <div class="cotainer">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                     <div class="card">
                         <div class="card-header">Search Book</div>
                         <div class="card-body">
                             <form name="my-form" onsubmit="return validform()" action="searchBooks.jsp" method="post">
                                 
                                  <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Book ID</label>
-                                    <div class="col-md-6">
-                                        <input type="text"  class="form-control" name="id">
+                                    
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="id" placeholder="Search by ID">
                                     </div>
-                                </div>
-                                
-                                    <div class="col-md-6 offset-md-4">
+                                     <div class="col-md-2">
                                         <button type="submit" class="btn btn-primary">
                                        Search
                                         </button>
                                     </div>
+                                </div>
+                                
+                                    </form>
+                                    
+                                     <form name="my-form" onsubmit="return validform()" action="searchBooksbyName.jsp" method="post">
+                                
+                                 <div class="form-group row">
+                                    
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="name" placeholder="Search by Name">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary">
+                                       Search
+                                        </button>
+                                    </div>
+                                </div>
                                     </form>
                                 </div>
                         </div>
@@ -346,8 +376,7 @@
             </div>
         </div>
    </main>
-   <br>
-
+   
 <section>
   <!--for demo wrap-->
   <div class="tbl-header">
@@ -521,7 +550,7 @@
 
 
 
-<main class="my-form">
+<main class="my-form" style="width: 40%; margin: auto;">
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -531,17 +560,16 @@
                             <form name="my-form" onsubmit="return validform()" action="DeleteBooks.jsp" method="">
                                 
                                  <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Book ID</label>
-                                    <div class="col-md-6">
-                                        <input type="text"  class="form-control" name="deleteBook">
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="deleteBook" placeholder="Enter Book ID">
                                     </div>
-                                </div>
-                                
-                                    <div class="col-md-6 offset-md-4">
+                                                                    
+                                    <div class="col-md-2">
                                         <button type="submit" class="btn btn-primary">
                                        Delete
                                         </button>
                                     </div>
+                                </div>
                                 </div>
                             </form>
                         </div>
@@ -581,7 +609,7 @@
 
 
 
-<main class="my-form">
+<main class="my-form" style="width: 40%; margin: auto;">
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -591,17 +619,18 @@
                             <form name="my-form" onsubmit="return validform()" action="removeStudents.jsp" method="">
                                 
                                  <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Student ID</label>
-                                    <div class="col-md-6">
-                                        <input type="text"  class="form-control" name="id">
+                                   
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="id" placeholder="Enter Student ID">
                                     </div>
-                                </div>
-                                
-                                    <div class="col-md-6 offset-md-4">
+                                                                    
+                                    <div class="col-md-2">
                                         <button type="submit" class="btn btn-primary">
-                                       Remove
+                                       Delete
                                         </button>
                                     </div>
+                                </div>
+                               
                                     </form>
                                 </div>
                         </div>
@@ -609,6 +638,7 @@
             </div>
         </div>
         <br>
+        </main>
     </div>
 
 

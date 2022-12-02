@@ -5,7 +5,7 @@
 	<title>FAST LIBRARY</title>
 </head>
 <body>
-<center><img src="Footer-Logo.png" align="right" width="250" height="80"></center>
+<center><img src="images/Footer-Logo.png" align="right" width="250" height="80"></center>
 <div class="w3-container">
   <div class="w3-bar w3-black">
     <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Search Result</button>
@@ -62,7 +62,6 @@
       	<%@ page import= "java.sql.*" %>
       	<%
     	String id_ = request.getParameter("id");
-    	
     	int id = Integer.parseInt(id_);
 		int count =0;
       	try {

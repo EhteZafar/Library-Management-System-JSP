@@ -62,14 +62,12 @@
       <%@ page import= "project.ConnectionProvider" %>
       <%@ page import= "java.sql.*" %>
       <%
-      	String id_ = request.getParameter("id");
-		int  count =0;
-  	
-  		int id = Integer.parseInt(id_);
+      	String name = request.getParameter("name");
+		int count = 0;
     	try {
     		Connection con = ConnectionProvider.getCon();
-    		PreparedStatement statement = con.prepareStatement("select * from students where student_id = ?");    
-    		statement.setInt(1, id);    
+    		PreparedStatement statement = con.prepareStatement("select * from students where student_name = ?");    
+    		statement.setString(1, name);    
     		ResultSet rs = statement.executeQuery();
 			while(rs.next())
 			{ count = 1;
