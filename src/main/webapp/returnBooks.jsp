@@ -4,7 +4,16 @@
 <html>
 <title>FAST LIBRARY</title>
 <body>
-<center><img src="images/Footer-Logo.png" align="right" width="250" height="80"></center>
+
+<div class="row">
+	<div class="col-md-6 col-sm-6">
+		<h2 style="font-style: italic; text-align: left; padding-top: 25px; padding-left: 15px;">FAST LIBRARY SYSTEM</h2>
+	</div>
+	<div class="col-md-6 col-sm-6">
+		<center><img src="images/Footer-Logo.png" align="right" width="250" height="80"></center>	
+	</div>
+</div>
+
 <div class="w3-container">
   <div class="w3-bar w3-black">
     <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Return Books</button>
@@ -89,11 +98,14 @@
 	      		      			int month1 = currentDate.getMonthValue();
 								
 	      		      			if((month+1)<= month1) {
+	      		      				if(day<day1) {
 	      		      				int m = ((month+1) - month1)*30;
 	      		      				int d = day1-day; %>
 	      		      				
 	      		      				<h3 style="text-align: center; font-style: italic;">Pay <%= m+d %>$ for late return</h3>
 	      		      				<%
+	      		      				}
+	      		      				
 	      		      			}
 	      		      			
 	      		      		}

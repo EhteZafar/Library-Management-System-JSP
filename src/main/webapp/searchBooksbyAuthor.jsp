@@ -54,13 +54,12 @@
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
-         <th>Student ID</th>
-          <th>Student Name</th>
-          <th>Batch</th>
-          <th>Degree Title</th>
-          <th>Program</th>
-          <th>Email</th>
-          <th>Contact</th>
+          <th>Book ID</th>
+          <th>Book Name</th>
+          <th>Author Name</th>
+          <th>Publisher Name</th>
+          <th>Category</th>
+          <th>Price</th>
         </tr>
       </thead>
     </table>
@@ -68,51 +67,47 @@
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-      <%@ page import= "project.ConnectionProvider" %>
-      <%@ page import= "java.sql.*" %>
-      <%
-      	String id_ = request.getParameter("id");
-		int  count =0;
-  	
-  		int id = Integer.parseInt(id_);
-    	try {
-    		Connection con = ConnectionProvider.getCon();
-    		PreparedStatement statement = con.prepareStatement("select * from students where student_id = ?");    
-    		statement.setInt(1, id);    
-    		ResultSet rs = statement.executeQuery();
-			while(rs.next())
-			{ count = 1;
-      %>
+        <%@ page import= "project.ConnectionProvider" %>
+      	<%@ page import= "java.sql.*" %>
+      	<%
+    	String author = request.getParameter("author");
+		int count =0;
+      	try {
+      		Connection con = ConnectionProvider.getCon();
+      		PreparedStatement statement = con.prepareStatement("select * from books where author = ?");    
+      		statement.setString(1, author);    
+      		ResultSet rs = statement.executeQuery();
+  			while(rs.next())
+  			{  
+  				count=1;
+      	%>
         <tr>
-          <td><%= rs.getString(1) %></td>
-          <td><%= rs.getString(2) %></td>
-          <td><%= rs.getString(3) %></td>
-          <td><%= rs.getString(4) %></td>
-          <td><%= rs.getString(5) %></td>
-          <td><%= rs.getString(6) %></td>
-          <td><%= rs.getString(7) %></td>
+        	<td><%= rs.getString(1) %></td>
+          	<td><%= rs.getString(2) %></td>
+          	<td><%= rs.getString(3) %></td>
+          	<td><%= rs.getString(4) %></td>
+          	<td><%= rs.getString(5) %></td>
+          	<td><%= rs.getString(6) %></td>
         </tr>
-      </tbody>
-      <% }
-			if(count==0) {
+    <%
+  			} %>
+  			
+  		</tbody>
+    </table>
+    
+    <% 	
+  			
+  			if(count==0) {
   				%>
-  				<h3 style="text-align: center; font-style: italic;">Student not registered</h3>
+  				<h3 style="text-align: center; font-style: italic;">Books are not in Database of this author</h3>
   			<% } 
-			}
-      catch(Exception e) {
-    	  out.println(e);
+  		   
+      	} catch (Exception e) {
+    	  System.out.println(e);
       }
       %>
-    </table>
   </div>
 </section>
 
-    <hr class="new1">
-  <center><h5>Note: Any errors occur then contact El Programmers.
-Designed & Developed by El Programmers Team</h5></center>
-  <hr class="new1">
-<center><h5>All Right Reserved @ El Programmers:: 2022-Present</h5></center> 
-  <hr class="new1">
-<br>
 </body>
 </html>

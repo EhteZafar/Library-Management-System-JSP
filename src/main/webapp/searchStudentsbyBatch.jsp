@@ -71,14 +71,12 @@
       <%@ page import= "project.ConnectionProvider" %>
       <%@ page import= "java.sql.*" %>
       <%
-      	String id_ = request.getParameter("id");
-		int  count =0;
-  	
-  		int id = Integer.parseInt(id_);
+      	String batch = request.getParameter("batch");
+		int count = 0;
     	try {
     		Connection con = ConnectionProvider.getCon();
-    		PreparedStatement statement = con.prepareStatement("select * from students where student_id = ?");    
-    		statement.setInt(1, id);    
+    		PreparedStatement statement = con.prepareStatement("select * from students where batch = ?");    
+    		statement.setString(1, batch);    
     		ResultSet rs = statement.executeQuery();
 			while(rs.next())
 			{ count = 1;
@@ -96,7 +94,7 @@
       <% }
 			if(count==0) {
   				%>
-  				<h3 style="text-align: center; font-style: italic;">Student not registered</h3>
+  				<h3 style="text-align: center; font-style: italic;">No student is registered in this batch </h3>
   			<% } 
 			}
       catch(Exception e) {

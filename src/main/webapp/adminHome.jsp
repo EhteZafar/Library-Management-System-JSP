@@ -6,8 +6,14 @@
 </head>
 
 <body>
-
-<center><img src="images/Footer-Logo.png" align="right" width="250" height="80"></center>	
+<div class="row">
+	<div class="col-md-6 col-sm-6">
+		<h2 style="font-style: italic; text-align: left; padding-top: 25px; padding-left: 15px;">FAST LIBRARY SYSTEM</h2>
+	</div>
+	<div class="col-md-6 col-sm-6">
+		<center><img src="images/Footer-Logo.png" align="right" width="250" height="80"></center>	
+	</div>
+</div>
 
 <div class="w3-container">
   <div class="w3-bar w3-black">
@@ -16,7 +22,9 @@
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Registered Students</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo1')">All Books</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Delete')">Delete Books</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'UpdateBooks')">Update Books</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Remove')">Remove Student</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'UpdateStudents')">Update Students</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Issue')">Issue Book</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Return')">Return Book</button>
     <a href="adminLogin.html" class="w3-bar-item w3-button tablink">Logout</a>
@@ -275,6 +283,21 @@
                                     </div>
                                 </div>
                                     </form>
+                                    
+                                    <form name="my-form" onsubmit="return validform()" action="searchStudentsbyBatch.jsp" method="post">
+                                
+                                 <div class="form-group row">
+                                    
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="batch" placeholder="Search by Batch">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary">
+                                       Search
+                                        </button>
+                                    </div>
+                                </div>
+                                    </form>
                                 </div>
                         </div>
                     </div>
@@ -362,6 +385,21 @@
                                     
                                     <div class="col-md-9">
                                         <input type="text"  class="form-control" name="name" placeholder="Search by Name">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary">
+                                       Search
+                                        </button>
+                                    </div>
+                                </div>
+                                    </form>
+                                    
+                                    <form name="my-form" onsubmit="return validform()" action="searchBooksbyAuthor.jsp" method="post">
+                                
+                                 <div class="form-group row">
+                                    
+                                    <div class="col-md-9">
+                                        <input type="text"  class="form-control" name="author" placeholder="Search by Author">
                                     </div>
                                     <div class="col-md-2">
                                         <button type="submit" class="btn btn-primary">
@@ -579,6 +617,108 @@
         <br>
     </div>
     
+    <div id="UpdateBooks" class="w3-container w3-border city" style="display:none">
+  <br>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Update Book</div>
+                        <div class="card-body">
+                            <form name="my-form" onsubmit="return validform()" action="updateBooks.jsp" method="post">
+                                <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Book ID</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="bookID">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">Book Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="bookName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">Author Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="authorName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Publisher</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="publisher">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Category</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="category">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Price</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="price">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Summary</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="summary">
+                                    </div>
+                                </div>
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <button name="save" type="submit" class="btn btn-primary">
+                                        Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</main>
+    </div>
+    
 <div id="Remove" class="w3-container w3-border city" style="display:none">
   <br>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -639,6 +779,110 @@
         </div>
         <br>
         </main>
+    </div>
+    
+       <div id="UpdateStudents" class="w3-container w3-border city" style="display:none">
+  <br>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Update Student</div>
+                        <div class="card-body">
+                            <form name="my-form" onsubmit="return validform()" action="updateStudent.jsp" method="post">
+                                <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Student ID</label>
+                                    <div class="col-md-6">
+                                        <input type="text"class="form-control" name="studentID">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">Student Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="studentName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">Batch</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="batch">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Degree Title</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="degreeTitle">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Degree Program (Ms/Bs)</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="degreeProgram">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Email</label>
+                                    <div class="col-md-6">
+                                        <input type="email"  class="form-control" name="email">
+                                    </div>
+                                </div>
+                                
+                                 <div class="form-group row">
+                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Contact Number</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  class="form-control" name="contact">
+                                    </div>
+                                </div>
+                                
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                       Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <br>
+    </div>
+
+</main>
+
+
     </div>
 
 
