@@ -14,7 +14,7 @@
 	try {
 		Connection con = ConnectionProvider.getCon();
 		Statement st = con.createStatement();
-		st.executeUpdate("insert into students values('"+id+"','"+name+"','"+batch+"','"+title+"','"+program+"','"+email+"','"+contact+"')");
+		st.executeUpdate("insert into students values('"+id+"','"+name+"','"+batch+"','"+title+"','"+program+"','"+email+"','"+contact+"','"+0+"')");
 		response.sendRedirect("adminHome.jsp");
 	} catch (Exception e) {
 		out.println(e);

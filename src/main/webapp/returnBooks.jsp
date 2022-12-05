@@ -90,6 +90,11 @@
 	      		      				%>
 	      		      				<h3 style="text-align: center; font-style: italic;">Pay <%= price.getString(6) %>$ for damages</h3>
 	      		      				<%
+	      		      			PreparedStatement update = con.prepareStatement("UPDATE students SET payments = ? WHERE student_ID = ?;");
+	      		      					update.setString(1, price.getString(6));
+	      		      			        update.setInt(2,studentID);
+	      		      			        
+	      		      			    update.executeUpdate();
 	      		      			} 
 	      		      			
 	      		      			int day = rs.getDate(5).getDate();

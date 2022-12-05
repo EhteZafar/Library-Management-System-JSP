@@ -111,6 +111,12 @@
      <% try {
 		Statement st = con.createStatement();
 		st.executeUpdate("insert into issue values('"+rs2.getString(1)+"','"+rs1.getString(1)+"','"+rs1.getString(2)+"','"+currentDate+"','"+result+"')");
+		
+		PreparedStatement insert = con.prepareStatement("UPDATE students SET payments = ? WHERE student_ID = ?;");
+			insert.setString(1, "0");
+	        insert.setInt(2,studentID);
+	        
+	    insert.executeUpdate();
 	} catch (Exception e) {
 		out.println(e);
 	}
