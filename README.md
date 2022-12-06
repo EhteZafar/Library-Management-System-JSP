@@ -1,5 +1,5 @@
 # Library-Management-System
-It's a semester project for the course of Software Construction & Development. The frontend part consist of HTML/CSS/BOOTSTRAP and backend uses JAVA/JSP/MYSQL.
+It is a semester project for the course of Software Construction & Development. The frontend part consist of HTML/CSS/BOOTSTRAP and backend uses JAVA/JSP/MYSQL.
 
 ![image](https://user-images.githubusercontent.com/104893311/205125727-754825d0-7da4-4de1-b8c8-0478e3ef4a30.png)
 ![image](https://user-images.githubusercontent.com/104893311/205126102-63776623-78ca-4740-b9e6-cecc77841235.png)
